@@ -1,0 +1,207 @@
+//
+// Mixins -- custom file for new and candidate mixins
+// --------------------------------------------------
+
+// Font size rem to px converter: Converts px to rems with px fallback
+// 
+.font-size(@value) {
+  @pxValue: ~`function(){var a='@{value}'.split("px");return parseInt(a[0])+'px'}()`;
+  @remValue: ~`function(){var a='@{value}'.split("px");return parseInt(a[0])/10+'rem'}()`;
+  font-size: ~"@{pxValue}"; 
+  font-size: ~"@{remValue}";
+}
+
+// Callout
+// -------------------------
+.callout-variant(@state; @border; @bg-color; @text-color) {
+  .callout-@{state},
+  .callout.@{state} {
+    border-left-color: @border;
+    background-color: @bg-color;
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h4, .h5, .h6 {
+      color: @text-color;
+    }
+  }
+}
+
+// Radius
+// -------------------------
+.radius(@radius) {
+  border-radius: @radius;
+}
+
+// Border radius
+// If the @border-radius-base (or -small or -large) is set to 0, we do not
+// want a bunch of declarations where border-radius:0; everywhere. 
+// Wrapping the bortder-radius property in this mixin prevents that.
+.border-radius(@radius) when (isnumber(@radius)) and not (@radius = 0) {
+  border-radius: @radius;
+}
+
+
+// Centered container element
+// ------------------------------------------
+// Head's up! Make sure maximum width is set later in a media query.
+// IE8 box model will break if min- and max- widths are set on this element.
+.make-container(@class-name: container) {
+  position: relative;
+  padding: 0 (@grid-gutter-width / 2);
+  margin-right: auto;
+  margin-left: auto;
+  .clearfix();
+  // Fix for nested containers
+  .@{class-name} {
+    width: auto !important;
+  }
+}
+
+// Create a row
+.make-rows(@gutter: @grid-gutter-width) {
+  .clearfix();
+  position: relative;
+  width: auto;
+  margin-left:  (@gutter / -2);
+  margin-right: (@gutter / -2);
+}
+
+// Create targeted centered columns
+.make-centered-columns(@class) {
+  .col {
+    .@{class}-centered {
+       float: none !important;
+       margin-left: auto;
+       margin-right: auto;
+     }
+    .@{class}-uncentered  {
+      float: left !important;
+      margin-left: 0;
+      margin-right: 0;
+      &.opposite {
+        float: right !important;
+      }
+    }
+  }
+}
+
+// Grid generator
+// ------------------
+
+// These four mixins create different parts of the grid
+
+// Column width
+.grid-calc(@index; @columns: @grid-columns; @class; @type) when (@type = width) and (@index > 0) {
+  .@{class}-@{index} {
+    width: round(percentage((@index / @columns)), 5);
+  }
+}
+
+// Push source ordering
+.grid-calc(@index; @columns: @grid-columns; @class; @type) when (@type = push) {
+  .@{class}-push-@{index} {
+    left: round(percentage((@index / @columns)), 5);
+  }
+}
+
+// Pull source ordering
+.grid-calc(@index; @columns: @grid-columns; @class; @type) when (@type = pull) {
+  .@{class}-pull-@{index} {
+    right: round(percentage((@index / @columns)), 5);
+  }
+}
+
+// Offsets
+.grid-calc(@index; @columns: @grid-columns; @class; @type) when (@type = offset) {
+  .@{class}-offset-@{index} {
+    margin-left: round(percentage((@index / @columns)), 5);
+  }
+}
+
+// THE LOOP 
+// This mixin builds targeted classes one property at a time
+.build-grid(@index; @columns: @grid-columns; @class; @type) when (@index >= 0) {
+  .grid-calc(@index; @columns; @class; @type);
+  // next iteration
+  .build-grid((@index - 1); @columns; @class; @type);
+}
+
+// Builds global push/pull, for when you don't need or want to source-ordering to a particular class
+.build-source-ordering(@index, @columns: @grid-columns) when (@index >= 0) {
+  .col.push-@{index} {
+    left: round(percentage((@index / @columns)), 5);
+  }
+  .col.pull-@{index} {
+    right: round(percentage((@index / @columns)), 5);
+  }
+  // next iteration
+  .build-source-ordering((@index - 1));
+}
+
+// Builds global offsets, for when you don't need or want to target offsets to a particular class
+.build-offsets(@index, @columns: @grid-columns) when (@index >=0) {
+  .col.offset-@{index} {
+    margin-left: round(percentage((@index / @columns)), 5);
+  }
+  // next iteration
+  .build-offsets((@index - 1));
+}
+
+// Full grid
+// Build all targeted properties for a single class
+.build-full-grid(@index; @columns: @grid-columns; @class) when (@index >= 0) {
+  .grid-calc(@index; @columns; @class; @type: width);
+  .grid-calc(@index; @columns; @class; @type: offset);
+  .grid-calc(@index; @columns; @class; @type: push);
+  .grid-calc(@index; @columns; @class; @type: pull);
+  // next iteration
+  .build-full-grid((@index - 1); @columns; @class);
+}
+
+// Static grid
+// Build a special static grid if you don't want a fluid one
+.build-static-grid(@index) when (@index >= 0) {
+  .col.md-@{index} {
+    width: round(percentage((@index / @grid-columns)), 5);
+  }
+  .col.offset-@{index} {
+    margin-left: round(percentage((@index / @grid-columns)), 5);
+  }
+  .col.push-@{index} {
+    left: round(percentage((@index / @grid-columns)), 5);
+  }
+  .col.pull-@{index} {
+    right: round(percentage((@index / @grid-columns)), 5);
+  }
+  // next iteration
+  .build-static-grid((@index - 1));
+}
+
+// Block grid mixins
+// ---------------------
+
+.make-block-grid(@columns: @grid-columns; @class: sm) when (@columns > 0) {
+  .@{class}-block-grid-@{columns} {
+    > li {
+      width: round(percentage((1 / @columns)), 5);
+      padding: 0 0.625em 1.25em;
+      &:nth-of-type(n) {
+        clear: none; 
+      }
+      &:nth-of-type(@{columns}n+1) {
+        clear: both; 
+      }
+    }
+  }
+  // next iteration
+  .make-block-grid((@columns - 1), @class);
+}
+
+.remove-block-grid-clearing(@columns: @grid-columns; @class: sm) when (@columns > 0) {
+  .@{class}-block-grid-@{columns} {
+    > li:nth-of-type(@{columns}n+1) {
+      clear: none; 
+    }   
+  }
+  // next iteration
+  .remove-block-grid-clearing((@columns - 1), @class);
+}

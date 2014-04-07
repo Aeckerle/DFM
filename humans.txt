@@ -1,0 +1,16 @@
+/* the humans responsible */
+
+/* TEAM */
+  <your title>: <your name>
+  Site: 
+  Twitter: 
+  Location: 
+
+/* THANKS */
+  Names (& URL): 
+
+/* SITE */
+  Standards: HTML, CSS
+  Components: Modernizr, jQuery
+  Software:
+  
