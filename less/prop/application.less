@@ -1,13 +1,21 @@
+// these should not be camelcase. use same syntax as strapit:
+// e.g. @title-font; @light-gray; @line-gray
+
 @TitleFont: 'Dosis', sans-serif;
 @Teal: #31C5C7;
 @LightGrey: #f2f2f2;
 @MainFont: 'PT Sans', sans-serif;
 @LineGrey: #E8E8E8;
 
+// the changes below should be made in the variables.less file
+// by adding 'PT Sans' to the @font-family-sans-serif var
+// and making @text-color: #444
 body {
     font-family: @MainFont;
     color: #444444;
 }
+
+// also -- two tabs indentation throughout
 
 .cbp-fbscroller,
 .cbp-fbscroller section { 
@@ -21,10 +29,11 @@ body {
       width: 100%; 
 
     a {
-    font-family: @TitleFont;
+    font-family: @TitleFont; // again -- this would change by making the change in the variable.less file
     text-transform:uppercase;
     font-weight: bold;
-    font-size:17px;
+    font-size:17px; // for any font-size declarations, use the .font-size mixin to get a rem value.
+                    // e.g. .font-size(17px);
     }
 
 }
@@ -33,6 +42,9 @@ body {
 .navbar {
     background-color: #fff;
     border-bottom: #e6e6e6;
+// use a mixin for the stuff below, e.g.: .box-shadow(0px 1px 16px 0px rgba(0, 0, 0, 0.18))
+// as of strapit 2.0.7, you won't need mixins. you can just put in the box-shadow declaration
+// and grunt autoprefixer will add in the correct vendor prefixes
 -webkit-box-shadow: 0px 1px 16px 0px rgba(0, 0, 0, 0.18);
 -moz-box-shadow:    0px 1px 16px 0px rgba(0, 0, 0, 0.18);
 box-shadow:         0px 1px 16px 0px rgba(0, 0, 0, 0.18);
@@ -45,6 +57,9 @@ box-shadow:         0px 1px 16px 0px rgba(0, 0, 0, 0.18);
 .jumbotron {
     margin-bottom:0px;
 }
+
+// class names shouild not be camel case. name them as you do variables
+// in this case light-grey
 .LightGrey {
     background-color: @LightGrey;
 }
@@ -56,6 +71,7 @@ box-shadow:         0px 1px 16px 0px rgba(0, 0, 0, 0.18);
 .homeSection{
     text-align: center;
         top: 50%;
+// use the .transform() mixin here
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
@@ -65,16 +81,19 @@ box-shadow:         0px 1px 16px 0px rgba(0, 0, 0, 0.18);
 .btn-primary, .btn.primary {
     background-color: @Teal;
     border-color: @Teal;
-    color: #FFFFFF;
+    color: #FFFFFF; // for these value, #fff will do.
     margin:10px;
     padding:10px;
 }
 
-
+// are these classes (darktype, lighttype) used over multiple area of the site or just one spot?
+// they are not very specifically-named
 .DarkType{
     color: #FFFFFF;
     display: inline-block;
-    padding: 0.5% 1.1% 0.6%;
+    padding: 0.5% 1.1% 0.6%; // i would try to stay away from percentage in padding unless this is something
+                             // specifc to a plugin. use either px or ems. eventually we'll just use ems
+                             // but since strapit uses px, that would be preferable.
     background:rgba(0,0,0,0.5);
     font-size: 85px;
     line-height: 95px;
@@ -109,7 +128,7 @@ box-shadow:         0px 1px 16px 0px rgba(0, 0, 0, 0.18);
 }
 
 .fa-heart:before {
-    content: "";
+    content: ""; // if there is a unicode for this, would be better to do that rather than a character.
 }
 
 .fa {
@@ -147,6 +166,8 @@ box-shadow:         0px 1px 16px 0px rgba(0, 0, 0, 0.18);
     color:#fff !important;
 }
 
+// i would try to avoid using ids as a hook for styles.
+// try recasting these as classnames instead 
 #fbsection1 {
 background: url(http://digitalfirst.me/dfl/wp-content/uploads/2014/01/parallax6.png) 50% 0 fixed; 
 
@@ -186,7 +207,7 @@ background: url(http://digitalfirst.me/dfl/wp-content/uploads/2014/01/parallax6.
  }
 
  .vertical_banner {
-    height: 100%;
+    height: 100%; // mixin for height and width properties produces same thing: .square(100%);
     width: 100%;
     position: relative;
 }
@@ -270,7 +291,33 @@ background-attachment: fixed;
 /* Portfolio Grid */
 
 
-
+// here's where nesting comes in handy
+// recast like this:
+//
+/*
+.related {
+  > a {
+    ...
+    &:hover {
+      ...
+      img {
+        ...
+      }
+    }
+    &:active {
+      img {
+        ...
+      }
+    }
+    img {
+      ...
+    }
+    h3 {
+      ...
+    }
+  }
+}
+*/
 .related > a {
     border: 3px solid rgba(0,0,0,0.4);;
     display: inline-block;
@@ -349,7 +396,7 @@ background-attachment: fixed;
     display: inline-block;
     cursor: pointer;
     -webkit-touch-callout: none;
-    -webkit-user-select: none;
+    -webkit-user-select: none; // mixin .user-select();
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
