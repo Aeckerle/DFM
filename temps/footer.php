@@ -69,16 +69,17 @@ $(document).ready(function(){
    });  // end section function
 }); // close out script
 </script>
+
 <script type='text/javascript' src='js/waypoints.min.js'></script>
 <script type='text/javascript' src='js/CounterPlugIn.js'></script>
-    <script type='text/javascript' src='js/modernizr.custom.js'></script>
-    <script type='text/javascript' src='js/classie.js'></script>
-    <script type='text/javascript' src='js/helper.js'></script>
-    <script type='text/javascript' src='js/grid3d.js'></script>
+   
+<script src="http://tympanus.net/Blueprints/GridGallery/js/imagesloaded.pkgd.min.js"></script>
+    <script src="http://tympanus.net/Blueprints/GridGallery/js/masonry.pkgd.min.js"></script>
+    <script src="http://tympanus.net/Blueprints/GridGallery/js/classie.js"></script>
+    <script src="js/plugins/cbpGridGallery.js"></script>
     <script>
-      new grid3D( document.getElementById( 'grid3d' ) );
+      new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
     </script>
-
 
 </body>
 </html>

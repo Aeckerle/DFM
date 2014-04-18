@@ -1,3 +1,29 @@
+.blk-trans {
+  color: #FFFFFF;
+  display: inline-block;
+  padding: 0.5% 1.1% 0.6%;
+  background: rgba(0, 0, 0, 0.5);
+  font-size: 85px;
+  line-height: 95px;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  font-family: 'Dosis', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: auto;
+}
+.white-trans {
+  color: #000;
+  display: inline-block;
+  padding: 0.5% 1.1% 0.6%;
+  background: rgba(255, 255, 255, 0.5);
+  font-size: 85px;
+  line-height: 95px;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  font-family: 'Dosis', sans-serif;
+  text-transform: uppercase;
+  width: auto;
+  font-weight: normal;
+}
 article,
 aside,
 details,
@@ -2201,6 +2227,255 @@ th.hidden-touch {
   }
   .lg-block-grid-1 > li:nth-of-type( 1n + 1) {
     clear: both;
+  }
+}
+/* Portfolio*/
+.grid-gallery ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.grid-gallery figure {
+  margin: 0;
+}
+.grid-gallery figure img {
+  display: block;
+  width: 100%;
+}
+.grid-gallery figcaption h3 {
+  margin: 0;
+  padding: 0 0 0.5em;
+}
+.grid-gallery figcaption p {
+  margin: 0;
+}
+/* Grid style */
+.grid-wrap {
+  max-width: 100%;
+  margin: 0 auto;
+}
+.grid {
+  margin: 0 auto;
+}
+.grid li {
+  width: 25%;
+  float: left;
+  cursor: pointer;
+}
+.grid figure {
+  padding: 0px;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+.grid li:hover figure {
+  opacity: 0.7;
+}
+.grid figcaption {
+  background: #e4e4e4;
+  padding: 25px;
+}
+/* Slideshow style */
+.slideshow {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 500000;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+  transition: opacity 0.5s, visibility 0s 0.5s;
+}
+.slideshow-open .slideshow {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+.slideshow ul {
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: translate3d(0, 0, 150px);
+  transform: translate3d(0, 0, 150px);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+}
+.slideshow ul.animatable li {
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+}
+.slideshow-open .slideshow ul {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.slideshow li {
+  width: 660px;
+  height: 560px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -280px 0 0 -330px;
+  visibility: hidden;
+}
+.slideshow li.show {
+  visibility: visible;
+}
+.slideshow li:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.slideshow li.current:after {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s, visibility 0s 0.3s;
+  transition: opacity 0.3s, visibility 0s 0.3s;
+}
+.slideshow figure {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border: 50px solid #fff;
+  overflow: hidden;
+}
+.slideshow figcaption {
+  padding-bottom: 20px;
+}
+.slideshow figcaption h3 {
+  font-weight: 300;
+  font-size: 200%;
+}
+.slideshow nav span {
+  position: fixed;
+  z-index: 1000;
+  color: #59656c;
+  text-align: center;
+  padding: 3%;
+  cursor: pointer;
+  font-size: 2.2em;
+}
+.slideshow nav span.nav-prev {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.slideshow nav span.nav-next {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 0;
+}
+.slideshow nav span.nav-close {
+  top: 0;
+  right: 0;
+  padding: 0.5em 1em;
+  color: #31373a;
+}
+/* Navigation */
+.icon:before,
+.icon:after {
+  font-family: 'fontawesome';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+span.nav-prev:before {
+  content: "\e601";
+}
+span.nav-next:before {
+  content: "\e600";
+}
+span.nav-close:before {
+  content: "\e602";
+}
+/* Info on arrow key navigation */
+.info-keys {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 60px;
+  font-size: 8px;
+  padding-top: 20px;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 1px;
+  text-align: center;
+}
+.info-keys:before,
+.info-keys:after {
+  position: absolute;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #fff;
+  text-align: center;
+  line-height: 14px;
+  font-size: 12px;
+}
+.info-keys:before {
+  left: 10px;
+  content: "\e603";
+}
+.info-keys:after {
+  right: 10px;
+  content: "\e604";
+}
+/* Example media queries (reduce number of columns and change slideshow layout) */
+@media screen and (max-width: 60em) {
+  /* responsive columns; see "Element sizing" on http://masonry.desandro.com/options.html */
+  .grid li {
+    width: 33.3%;
+  }
+  .slideshow li {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+  }
+  .slideshow li figure img {
+    width: auto;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  .slideshow nav span {
+    font-size: 1.8em;
+    padding: 0.3em;
+  }
+  .slideshow nav span.nav-close {
+    font-size: 1.8em;
+    padding: 0.3em;
+  }
+  .info-keys {
+    display: none;
+  }
+}
+@media screen and (max-width: 35em) {
+  .grid li {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 24em) {
+  .grid li {
+    width: 100%;
   }
 }
 code,
@@ -7342,23 +7617,33 @@ body {
   font-weight: bold;
   font-size: 17px;
 }
+.cbp-fbcurrent {
+  border-bottom: 4px solid #5BB6E7;
+}
+.cbp-fbcurrent a {
+  color: #31c5c7;
+}
 .navbar {
   background-color: #fff;
   border-bottom: #e6e6e6;
   -webkit-box-shadow: 0px 1px 16px 0px rgba(0, 0, 0, 0.18);
   -moz-box-shadow: 0px 1px 16px 0px rgba(0, 0, 0, 0.18);
   box-shadow: 0px 1px 16px 0px rgba(0, 0, 0, 0.18);
+  padding: 10px;
 }
 .navbar-nav > li > a {
   color: #E70F13;
 }
+.navbar-brand {
+  text-align: left;
+}
 .jumbotron {
   margin-bottom: 0px;
 }
-.LightGrey {
+.light-grey {
   background-color: #f2f2f2;
 }
-.White {
+.white {
   background-color: #fff;
 }
 .homeSection {
@@ -7377,38 +7662,6 @@ body {
   margin: 10px;
   padding: 10px;
 }
-.DarkType {
-  color: #FFFFFF;
-  display: inline-block;
-  padding: 0.5% 1.1% 0.6%;
-  background: rgba(0, 0, 0, 0.5);
-  font-size: 85px;
-  line-height: 95px;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-  font-family: 'Dosis', sans-serif;
-  text-transform: uppercase;
-  font-weight: 700;
-  width: auto;
-}
-.LightType {
-  color: #000;
-  display: inline-block;
-  padding: 0.5% 1.1% 0.6%;
-  background: rgba(255, 255, 255, 0.5);
-  font-size: 85px;
-  line-height: 95px;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-  font-family: 'Dosis', sans-serif;
-  text-transform: uppercase;
-  width: auto;
-  font-weight: normal;
-}
-.cbp-fbcurrent {
-  border-bottom: 4px solid #5BB6E7;
-}
-.cbp-fbcurrent a {
-  color: #31c5c7;
-}
 .fa-heart:before {
   content: "";
 }
@@ -7422,7 +7675,10 @@ body {
   color: #e8e8e8;
   font-size: 18px;
 }
-/* if you remove this then the page rolls up */
+.highlight {
+  color: #31c5c7;
+}
+/* if you remove this then the page rolls up not wipes*/
 .cbp-fbscroller section {
   position: relative;
   background-position: top center;
@@ -7452,24 +7708,47 @@ body {
   background-position: center center;
   background-size: cover;
   height: auto;
-  background-image: url(images/3.jpg);
+  padding-top: 200px;
+  background: url(images/tree.jpg) 50% 0 fixed;
 }
 #fbsection2 p {
-  font-size: 18px;
+  font-size: 16px;
+  line-height: 26px;
 }
 #fbsection2 h2 {
   font-family: 'Dosis', sans-serif;
-  font-size: 45px;
+  font-size: 46px;
   font-weight: 700;
-  margin-top: 22px;
+  margin-top: 0px 0px;
+  text-transform: uppercase;
+}
+#fbsection2 h3 {
+  font-family: 'Dosis', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  margin-top: 0px;
+  margin-bottom: 22px;
+  text-transform: uppercase;
+  color: #31c5c7;
+}
+#fbsection2 h4 {
+  font-size: 22px;
+  margin-top: 0px;
   margin-bottom: 22px;
   text-transform: uppercase;
 }
-.above {
-  background: url(http://digitalfirst.me/dfl/wp-content/uploads/2014/01/parallax6.png) 50% 90px fixed;
-  margin: 0 auto;
-  width: 100%;
-  position: relative;
+.statCount {
+  font-size: 60px;
+  color: #31c5c7;
+  font-weight: 700;
+  font-family: 'Dosis', sans-serif;
+}
+.statCount h6 {
+  font-size: 18px;
+  margin: 0px;
+}
+.linebreak {
+  padding: 30px 30px;
 }
 .vertical_banner {
   height: 100%;
@@ -7511,7 +7790,7 @@ body {
   width: 50px;
 }
 .subtitle {
-  font-size: 45px;
+  font-size: 22px;
   line-height: 34px;
   margin-bottom: 5px;
   text-transform: uppercase;
@@ -7519,274 +7798,77 @@ body {
   padding: 10px;
 }
 #fbsection3 {
-  background: url(http://digitalfirst.me/dfl/wp-content/uploads/2014/01/parallax6.png) 50% 90px fixed;
+  background: url(images/grass.jpg) 50% 0 fixed;
 }
-#fbsection3 li {
-  margin: 0px;
-  padding: 0px;
-  border: none;
+#fbsection3 h2 {
+  text-align: center;
+  color: #FFF;
+  display: inline-block;
+  padding: 2% 2%;
+  font-size: 45px;
+  line-height: 65px;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: auto;
 }
 #fbsection4 {
   background-image: url(images/2.jpg);
+  margin-top: 0px;
 }
-#fbsection5 {
-  background-image: url(images/5.jpg);
+#fbsection4 p {
+  font-size: 14px;
+  margin-left: 70px;
 }
-#TeamHead {
-  width: 100%;
-  display: block;
-  padding: 20px;
-  background-attachment: fixed;
-  background-position: 50% 0;
-  background-repeat: no-repeat;
-  height: 450px;
-  position: relative;
-  background-image: url(images/4.jpg);
-}
-/* Portfolio Grid */
-.related > a {
-  border: 3px solid rgba(0, 0, 0, 0.4);
-  display: inline-block;
+#fbsection4 h2 {
+  font-family: 'Dosis', sans-serif;
+  font-size: 46px;
+  font-weight: 700;
+  margin-top: 0px 0px;
+  text-transform: uppercase;
   text-align: center;
-  margin: 20px 10px;
-  padding: 25px;
-  -webkit-transition: color 0.3s, border-color 0.3s;
-  transition: color 0.3s, border-color 0.3s;
 }
-.related a:hover {
-  border-color: #fff;
+#fbsection4 h3 {
+  margin-left: 70px;
+  text-transform: uppercase;
+  font-size: 30px;
 }
-.related a img {
-  max-width: 100%;
-  opacity: 0.8;
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
-}
-.related a:hover img,
-.related a:active img {
-  opacity: 1;
-}
-.related a h3 {
-  margin: 0;
-  padding: 0.5em 0 0.3em;
-  max-width: 300px;
-  text-align: left;
-  font-size: 0.75em;
-}
-@media screen and (max-width: 25em) {
-  .codrops-icon span {
-    display: none;
-  }
-}
-.noscroll {
-  overflow: hidden;
-}
-.grid-wrap {
-  margin: 10px auto 0;
-  max-width: 1090px;
-  width: 100%;
-  padding: 0;
-  -webkit-perspective: 1500px;
-  perspective: 1500px;
-}
-.grid {
-  position: relative;
-  -webkit-transition: all 0.5s cubic-bezier(0, 0, 0.25, 1);
-  transition: all 0.5s cubic-bezier(0, 0, 0.25, 1);
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-}
-.view-full .grid {
-  -webkit-transform: translateZ(-1500px);
-  transform: translateZ(-1500px);
-}
-.grid figure,
-.grid .placeholder {
-  width: 340px;
-  height: 300px;
-}
-.grid figure {
-  margin: 10px;
+.service {
+  width: 60px;
+  height: 60px;
+  background-color: #444;
+  border-radius: 100%;
+  line-height: 60px;
+  text-align: center;
+  vertical-align: middle;
   display: inline-block;
-  cursor: pointer;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
-.grid figure.active {
-  opacity: 0;
-}
-.grid .placeholder {
-  pointer-events: none;
-  position: absolute;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-}
-.placeholder > div {
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-.placeholder .front img {
-  width: 100%;
-  height: 100%;
-}
-.placeholder .back {
-  background: white;
-  -webkit-transform: rotateY(180deg);
-  transform: rotateY(180deg);
-}
-.view-full .placeholder {
-  -webkit-transition: all 0.5s 0.1s cubic-bezier(0, 0, 0.25, 1);
-  transition: all 0.5s 0.1s cubic-bezier(0, 0, 0.25, 1);
-}
-.vertical .view-full .placeholder {
-  -webkit-transform: translateZ(1500px) rotateX(-179.9deg);
-  transform: translateZ(1500px) rotateX(-179.9deg);
-  /* FF, Chrome, can we agree on one direction, pleeease? */
-}
-.horizontal .view-full .placeholder {
-  -webkit-transform: translateZ(1500px) rotateY(-179.9deg);
-  transform: translateZ(1500px) rotateY(-179.9deg);
-}
-.grid figure img {
-  display: block;
-  width: 100%;
-}
-.content,
-.loading {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  /* Careful, does not work in IE < 11 http://caniuse.com/#search=pointer-events */
-}
-.content {
-  overflow-y: scroll;
-  height: 0;
-  /* What seems to be the problem, officer? Well, we have a second scroll bar in Chrome! */
-  background: #fff;
-  visibility: hidden;
-  z-index: 400;
-  -webkit-overflow-scrolling: touch;
-}
-.loading {
-  opacity: 0;
-  z-index: 1;
-  background: transparent url(../img/preloader.gif) no-repeat center center;
-  -webkit-transform: scale(0.5);
-  transform: scale(0.5);
-  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
-  transition: opacity 0.5s, transform 0.5s;
-}
-.loading.show {
-  opacity: 1;
-  -webkit-transform: scale(1);
-  transform: scale(1);
-}
-.content.show {
-  height: auto;
-  pointer-events: auto;
-  visibility: visible;
-}
-.content > div {
-  z-index: 10;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  overflow: hidden;
-  height: 0;
-  opacity: 0;
-  background: #fff;
-}
-.content > div.show {
-  height: auto;
-  opacity: 1;
-  -webkit-transition: opacity 0.6s;
-  transition: opacity 0.6s;
-}
-.icon:before {
-  font-family: 'fontawesome';
-  speak: none;
+.service .fa {
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  line-height: inherit;
+  color: #fff;
+  font-size: 20px;
 }
-.close-content {
-  position: fixed;
-  z-index: 1000;
-  top: 0;
-  right: 10px;
-  font-size: 1.6em;
-  color: #aaa;
-  cursor: pointer;
-  pointer-events: none;
-  padding: 1em;
-  opacity: 0;
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
+#fbsection5 {
+  background-image: url(images/1.jpg);
 }
-.close-content:hover {
-  color: #999;
+#map_canvas {
+  width: 100%;
+  height: 400px;
 }
-.content > div.show ~ .close-content {
-  opacity: 1;
-  pointer-events: auto;
-}
-.close-content:before {
-  content: "\e602";
-}
-/* Simple fallback */
-/* if any of these are not supported, a simple fallback will be shown */
-.no-pointerevents .content,
-.no-csstransforms3d .content,
-.no-csstransitions .content,
-.no-pointerevents .content > div,
-.no-csstransforms3d .content > div,
-.no-csstransitions .content > div,
-.no-pointerevents .close-content,
-.no-csstransforms3d .close-content,
-.no-csstransitions .close-content {
-  opacity: 1;
-  visibility: visible;
-  display: none;
-  height: auto;
-}
-.no-pointerevents .show .close-content,
-.no-csstransforms3d .show .close-content,
-.no-csstransition .show .close-content,
-.no-pointerevents div.show,
-.no-csstransforms3d div.show,
-.no-csstransitions div.show,
-.no-csstransitions .dummy-img,
-.no-csstransitions .dummy-text,
-.no-csstransforms3d .dummy-img,
-.no-csstransforms3d .dummy-text,
-.no-pointerevents .dummy-img,
-.no-pointerevents .dummy-text {
-  display: block !important;
-  opacity: 1;
-}
-@media screen and (max-width: 1000px) {
-  .grid figure,
-  .grid .placeholder {
-    width: 240px;
-    height: 212px;
-  }
+#box {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: gray;
+  border: 5px solid black;
+  transition: border 500ms ease-out;
+  -webkit-transition: border 500ms ease-out;
+  -moz-transition: border 500ms ease-out;
+  -o-transition: border 500ms ease-out;
 }
 @font-face {
   font-family: 'Glyphicons Halflings';

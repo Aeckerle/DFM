@@ -205,3 +205,33 @@
   // next iteration
   .remove-block-grid-clearing((@columns - 1), @class);
 }
+
+  // adds a black transparency around text
+.blk-trans {
+    color: #FFFFFF;
+    display: inline-block;
+    padding: 0.5% 1.1% 0.6%;
+    background:rgba(0,0,0,0.5);
+    font-size: 85px;
+    line-height: 95px;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    font-family: @title-font;
+    text-transform:uppercase;
+    font-weight: 700;
+    width: auto
+    }
+
+  // adds a whtie transparency around text
+.white-trans {
+    color: #000;
+    display: inline-block;
+    padding: 0.5% 1.1% 0.6%;
+    background:rgba(255, 255, 255,0.5);
+    font-size: 85px;
+    line-height: 95px;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    font-family: @title-font;
+    text-transform:uppercase;
+    width: auto;
+    font-weight: normal;
+    }

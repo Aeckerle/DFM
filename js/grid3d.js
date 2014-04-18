@@ -24,11 +24,11 @@
 
 	grid3D.prototype._init = function() {
 		// grid wrapper
-		this.gridWrap = this.el.querySelector( 'div.grid-wrap' );
+		this.gridWrap = this.el.querySelector( 'div.portfolio-wrap' );
 		// grid element
-		this.grid = this.gridWrap.querySelector( 'div.grid' );
+		this.portfolio = this.gridWrap.querySelector( 'div.portfolio' );
 		// main grid items
-		this.gridItems = [].slice.call( this.grid.children );
+		this.gridItems = [].slice.call( this.portfolio.children );
 		// default sizes for grid items
 		this.itemSize = { width : this.gridItems[0].offsetWidth, height : this.gridItems[0].offsetHeight };
 		// content
@@ -122,7 +122,7 @@
 		this.placeholder.style.top = currentItem.offsetTop + 'px';
 		
 		// append placeholder to the grid
-		this.grid.appendChild( this.placeholder );
+		this.portfolio.appendChild( this.placeholder );
 
 		// and animate it
 		var animFn = function() {
@@ -229,8 +229,8 @@
 		this.itemSize = { width : this.gridItems[0].offsetWidth, height : this.gridItems[0].offsetHeight };
 		if( this.placeholder ) {
 			// set the placeholders top to "0 - grid offsetTop" and left to "0 - grid offsetLeft"
-			this.placeholder.style.left = Number( -1 * ( this.grid.offsetLeft - scrollX() ) ) + 'px';
-			this.placeholder.style.top = Number( -1 * ( this.grid.offsetTop - scrollY() ) ) + 'px';
+			this.placeholder.style.left = Number( -1 * ( this.portfolio.offsetLeft - scrollX() ) ) + 'px';
+			this.placeholder.style.top = Number( -1 * ( this.portfolio.offsetTop - scrollY() ) ) + 'px';
 			// set the placeholders width to windows width and height to windows height
 			this.placeholder.style.width = getViewportW() + 'px';
 			this.placeholder.style.height = getViewportH() + 'px';
