@@ -76,7 +76,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
               <span class="icon-bar"></span>
 
             </button>
-            <a class="navbar-brand" href="#fbsection1">Digital First Media</a>
+            <a class="navbar-brand" href="#fbsection1">Digital First Media 123</a>
           </div>
           <div class="collapse navbar-collapse">
            <nav>
