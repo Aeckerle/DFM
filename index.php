@@ -4,7 +4,7 @@
    <?php require_once('temps/header.php'); // load in header ?>
 
    <section id="fbsection1" data-speed="4" data-type="background">
-      <div class="homeSection">
+    <div class="homeSection">
          <span class="blk-trans">
          Digital First Media
          </span>
@@ -16,8 +16,8 @@
          <a role="button" class="btn primary lg">Download Strapit</a>
       </div>
    </section>
-   <section id="fbsection2" data-speed="4" data-type="background">
-      <div class="jumbotron white text-center">
+      <section id="fbsection2" data-speed="4" data-type="background">
+        <div class="jumbotron white text-center">
          
          <div class="row">
             <h2>
@@ -86,15 +86,10 @@
        </ul>   
    </div>
  </div>
-   </section>
-
-   <section id="fbsection3" data-speed="4" data-type="background">
-      <h2>A GLIMPSE OF WORK WE’VE DONE FOR
-FORWARD THINKING BRANDS AND CLIENTS</h2>
-
- <div class="jumbotron">
-    
-      <div id="grid-gallery" class="grid-gallery">
+ </section> 
+ <section id="fbsection3" data-speed="4" data-type="background">
+  <div class="jumbotron white">
+            <div id="grid-gallery" class="grid-gallery">
         <div class="grid-wrap">
           <ul class="grid">
             <li class="grid-sizer"></li><!-- for Masonry column width -->
@@ -118,47 +113,106 @@ FORWARD THINKING BRANDS AND CLIENTS</h2>
                 <img src="images/500x500_mediacenter.jpg" alt="img04"/>
               </figure>
             </li>
-
+              <li>
+              <figure>
+                <img src="images/500x500_mediacenter.jpg" alt="img05"/>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <img src="images/500x500_mediacenter.jpg" alt="img06"/>
+              </figure>
+            </li>
           </ul>
         </div><!-- // grid-wrap -->
         <div class="slideshow">
           <ul>
+            <!-- start -->
             <li>
               <figure>
-                <figcaption>
+                <div class="col md-6">   
+                <img src="images/500x500_mediacenter.jpg" alt="img01"/>
+                  </div>
+                   <figcaption>
+                    <div class="col md-6"> 
                   <h3>Letterpress asymmetrical</h3>
                   <p>Kale chips lomo biodiesel stumptown Godard Tumblr, mustache sriracha tattooed cray aute slow-carb placeat delectus. Letterpress asymmetrical fanny pack art party est pour-over skateboard anim quis, ullamco craft beer.</p>
+                </div>
                 </figcaption>
+              </figure>
+            </li>
+            <!-- end -->
+            <!-- start -->
+            <li>
+              <figure>
+                <div class="col md-6">   
                 <img src="images/500x500_mediacenter.jpg" alt="img01"/>
+                  </div>
+                   <figcaption>
+                    <div class="col md-6"> 
+                  <h3>Letterpress asymmetrical</h3>
+                  <p>Kale chips lomo biodiesel stumptown Godard Tumblr, mustache sriracha tattooed cray aute slow-carb placeat delectus. Letterpress asymmetrical fanny pack art party est pour-over skateboard anim quis, ullamco craft beer.</p>
+                </div>
+                </figcaption>
               </figure>
             </li>
+            <!-- end --> <!-- start -->
             <li>
               <figure>
-                <figcaption>
-                  <h3>Vice velit chia</h3>
-                  <p>Chillwave Echo Park Etsy organic Cosby sweater seitan authentic pour-over. Occupy wolf selvage bespoke tattooed, cred sustainable Odd Future hashtag butcher.</p>
+                <div class="col md-6">   
+                <img src="images/500x500_mediacenter.jpg" alt="img01"/>
+                  </div>
+                   <figcaption>
+                    <div class="col md-6"> 
+                  <h3>Letterpress asymmetrical</h3>
+                  <p>Kale chips lomo biodiesel stumptown Godard Tumblr, mustache sriracha tattooed cray aute slow-carb placeat delectus. Letterpress asymmetrical fanny pack art party est pour-over skateboard anim quis, ullamco craft beer.</p>
+                </div>
                 </figcaption>
-                <img src="img/large/2.png" alt="img02"/>
               </figure>
             </li>
+            <!-- end --> <!-- start -->
             <li>
               <figure>
-                <figcaption>
-                  <h3>Brunch semiotics</h3>
-                  <p>IPhone PBR polaroid before they sold out meh you probably haven't heard of them leggings tattooed tote bag, butcher paleo next level single-origin coffee photo booth.</p>
+                <div class="col md-6">   
+                <img src="images/500x500_mediacenter.jpg" alt="img01"/>
+                  </div>
+                   <figcaption>
+                    <div class="col md-6"> 
+                  <h3>Letterpress asymmetrical</h3>
+                  <p>Kale chips lomo biodiesel stumptown Godard Tumblr, mustache sriracha tattooed cray aute slow-carb placeat delectus. Letterpress asymmetrical fanny pack art party est pour-over skateboard anim quis, ullamco craft beer.</p>
+                </div>
                 </figcaption>
-                <img src="img/large/3.png" alt="img03"/>
               </figure>
             </li>
+            <!-- end --> <!-- start -->
             <li>
               <figure>
-                <figcaption>
-                  <h3>Chillwave nihil occupy</h3>
-                  <p>Vice cliche locavore mumblecore vegan wayfarers asymmetrical letterpress hoodie mustache. Shabby chic lomo polaroid, scenester 8-bit Portland Pitchfork VHS tote bag.</p>
+                <div class="col md-6">   
+                <img src="images/500x500_mediacenter.jpg" alt="img01"/>
+                  </div>
+                   <figcaption>
+                    <div class="col md-6"> 
+                  <h3>Letterpress asymmetrical</h3>
+                  <p>Kale chips lomo biodiesel stumptown Godard Tumblr, mustache sriracha tattooed cray aute slow-carb placeat delectus. Letterpress asymmetrical fanny pack art party est pour-over skateboard anim quis, ullamco craft beer.</p>
+                </div>
                 </figcaption>
-                <img src="img/large/4.png" alt="img04"/>
               </figure>
             </li>
+            <!-- end --> <!-- start -->
+            <li>
+              <figure>
+                <div class="col md-6">   
+                <img src="images/500x500_mediacenter.jpg" alt="img01"/>
+                  </div>
+                   <figcaption>
+                    <div class="col md-6"> 
+                  <h3>Letterpress asymmetrical</h3>
+                  <p>Kale chips lomo biodiesel stumptown Godard Tumblr, mustache sriracha tattooed cray aute slow-carb placeat delectus. Letterpress asymmetrical fanny pack art party est pour-over skateboard anim quis, ullamco craft beer.</p>
+                </div>
+                </figcaption>
+              </figure>
+            </li>
+            <!-- end -->
           </ul>
           <nav>
             <span class="icon nav-prev"></span>
@@ -169,101 +223,81 @@ FORWARD THINKING BRANDS AND CLIENTS</h2>
         </div><!-- // slideshow -->
       </div><!-- // grid-gallery -->
     </div>
-   </section>
-   <section id="fbsection4">
-    <div class="jumbotron white">
+ </section>  
+    <section id="fbsection4" data-speed="4" data-type="background">
+         <div class="jumbotron white">
+          <div class="row">
             <h2>
-               about digital first labs
+               Our Services
             </h2>
             <div class="g-hr type_short linebreak">
-               <span class="g-hr-h">
+              <span class="g-hr-h">
                <i class="fa fa-heart"></i>
                </span>
-   <div class="col md-4">
-      <img class="img-circle pull-left" src="http://placehold.it/120x120" data-src="holder.js/140x140" alt="Generic placeholder image">
-     <h3 id="download-strapit">Strapit</h3>
-     <p>Compiled and minified CSS, JavaScript, and fonts. No docs or original source files are included.</p>
-   </div>
-  <div class="col md-4">
-      <img class="img-circle pull-left" src="http://placehold.it/120x120" data-src="holder.js/140x140" alt="Generic placeholder image">
-     <h3 id="download-strapit">Strapit</h3>
-     <p>Compiled and minified CSS, JavaScript, and fonts. No docs or original source files are included.</p>
-   </div>
-    <div class="col md-4">
-      <img class="img-circle pull-left" src="http://placehold.it/120x120" data-src="holder.js/140x140" alt="Generic placeholder image">
-     <h3 id="download-strapit">Strapit</h3>
-     <p>Compiled and minified CSS, JavaScript, and fonts. No docs or original source files are included.</p>
-   </div>
-<div class="col md-4">
-    <div class="service pull-left">
-    <i class="fa fa-heart "></i>
-  </div>
-     <h3 id="download-strapit">Strapit</h3>
-     <p>Compiled and minified CSS, JavaScript, and fonts. No docs or original source files are included.</p>
-   </div>
-  <div class="col md-4">
-      <img class="img-circle pull-left" src="http://placehold.it/120x120" data-src="holder.js/140x140" alt="Generic placeholder image">
-     <h3 id="download-strapit">Strapit</h3>
-     <p>Compiled and minified CSS, JavaScript, and fonts. No docs or original source files are included.</p>
-   </div>
-    <div class="col md-4">
-      <img class="img-circle pull-left" src="http://placehold.it/120x120" data-src="holder.js/140x140" alt="Generic placeholder image">
-     <h3 id="download-strapit">Strapit</h3>
-     <p>Compiled and minified CSS, JavaScript, and fonts. No docs or original source files are included.</p>
-   </div>
- </div>
-   </section>
-   <section id="fbsection5"><div id="map_canvas"></div>
-      <div class="jumbotron white">
-         <div class="container">
-   <div class="row">
-      <div class="col-6">
-      
-          <form class="form-signin" action="" method="post">
-          <fieldset>
-            <legend class="text-center">Contact us</legend>
-    
-            <!-- Name input-->
-            <div class="form-group">
-              <label class="col-m3" for="name">Name</label>
-              <div class="col-md-9">
-                <input id="name" name="name" type="text" placeholder="Your name" class="form-control">
-              </div>
-            </div>
-    
-            <!-- Email input-->
-            <div class="form-group">
-              <label class="col-3" for="email">Your E-mail</label>
-              <div class="col-md-9">
-                <input id="email" name="email" type="text" placeholder="Your email" class="form-control">
-              </div>
-            </div>
-    
-            <!-- Message body -->
-            <div class="form-group">
-              <label class="col-3" for="message">Your message</label>
-              <div class="col-md-9">
-                <textarea class="form-control" id="message" name="message" placeholder="Please enter your message here..." rows="5"></textarea>
-              </div>
-            </div>
-    
-            <!-- Form actions -->
-            <div class="form-group">
-              <div class="col-12 text-center">
-                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-              </div>
-            </div>
-          </fieldset>
-          </form>
+                </div>
+<!-- service item 1 -->
+                   <div class="col md-4">
+            <div class="service pull-left">
+            <i class="fa fa-cogs"></i>
+          </div>
+             <h3 id="download-strapit">Strapit</h3>
+             <p>Compiled and minified CSS, JavaScript, and fonts. No docs or original source files are included.</p>
+           </div>
 
-      </div>
-   </div>
+           <!-- service item 1 -->
+                   <div class="col md-4">
+            <div class="service pull-left">
+            <i class="fa fa-cogs"></i>
+          </div>
+             <h3 id="download-strapit">Strapit</h3>
+             <p>Compiled and minified CSS, JavaScript, and fonts. No docs or original source files are included.</p>
+           </div>
+           <!-- service item 1 -->
+                   <div class="col md-4">
+            <div class="service pull-left">
+            <i class="fa fa-cogs"></i>
+          </div>
+             <h3 id="download-strapit">Strapit</h3>
+             <p>Compiled and minified CSS, JavaScript, and fonts. No docs or original source files are included.</p>
+           </div>
+           <!-- service item 1 -->
+                   <div class="col md-4">
+            <div class="service pull-left">
+            <i class="fa fa-cogs"></i>
+          </div>
+             <h3 id="download-strapit">Strapit</h3>
+             <p>Compiled and minified CSS, JavaScript, and fonts. No docs or original source files are included.</p>
+           </div>
+
+
+ 
+               
 </div>
-         
 </div>
-
-
+    
    </section>
+      <section id="fbsection5" data-speed="6" data-type="background">
+            <div id='location-canvas' style='width:100%;height:300px;'></div>
+            <div class="jumbotron white">
+              <div class="container">
+
+      <form class="form-signin">
+           <h4 class="form-signin-heading">Please sign in</h4>
+
+                <input type="email" class="form-control" required placeholder="Email">
+                        <input type="password" class="form-control" required placeholder="Password">
+
+<a role="button" class="btn primary lg">Download Strapit</a>
+
+     
+      </form>
+
+    </div> <!-- /container -->
+
+
+    </div> <!-- /container -->
+
+   </section>   
 </div>
 </body>
 <?php require_once('temps/footer.php'); // load in footer ?> 
