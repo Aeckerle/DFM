@@ -25,23 +25,36 @@
   
 <link href='http://fonts.googleapis.com/css?family=Dosis:400,700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
-<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
 
 
 <script src="http://tympanus.net/Development/3DGridEffect/js/modernizr.custom.js"></script>
  <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
    <script>
       function initialize() {
-        var map_canvas = document.getElementById('map_canvas');
-        var map_options = {
-          scrollwheel: false,
-          center: new google.maps.LatLng(39.740854, -78.5463),
-          zoom: 13,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
-        var map = new google.maps.Map(map_canvas, map_options)
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
+   var mapOptions = {
+            zoom: 14,                        
+  zoomControl: false,
+  scaleControl: false,
+  scrollwheel: false,
+  disableDoubleClickZoom: true,
+           center: new google.maps.LatLng(39.741056, -104.988107),  
+           mapTypeId: google.maps.MapTypeId.TERRAIN
+       };
+ 
+   var map = new google.maps.Map(document.getElementById('location-canvas'),
+                                   mapOptions);
+                              
+   var marker = new google.maps.Marker({
+                   map: map,
+                   draggable: false,
+                   position: new google.maps.LatLng(39.741056, -104.988107)
+       });
+}
+                        
+google.maps.event.addDomListener(window, 'resize', initialize);
+google.maps.event.addDomListener(window, 'load', initialize);
     </script> 
 
 

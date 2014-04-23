@@ -2240,7 +2240,6 @@ th.hidden-touch {
 }
 .grid-gallery figure img {
   display: block;
-  width: 100%;
 }
 .grid-gallery figcaption h3 {
   margin: 0;
@@ -2248,6 +2247,7 @@ th.hidden-touch {
 }
 .grid-gallery figcaption p {
   margin: 0;
+  float: left;
 }
 /* Grid style */
 .grid-wrap {
@@ -2316,12 +2316,9 @@ th.hidden-touch {
   transform: translate3d(0, 0, 0);
 }
 .slideshow li {
-  width: 660px;
-  height: 560px;
+  width: 100%;
+  height: 100%;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -280px 0 0 -330px;
   visibility: hidden;
 }
 .slideshow li.show {
@@ -2387,7 +2384,7 @@ th.hidden-touch {
 /* Navigation */
 .icon:before,
 .icon:after {
-  font-family: 'fontawesome';
+  font-family: FontAwesome;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -2398,24 +2395,25 @@ th.hidden-touch {
   -moz-osx-font-smoothing: grayscale;
 }
 span.nav-prev:before {
-  content: "\e601";
+  content: "\f053";
 }
 span.nav-next:before {
-  content: "\e600";
+  content: "\f054";
 }
 span.nav-close:before {
-  content: "\e602";
+  content: "\f00d";
 }
 /* Info on arrow key navigation */
 .info-keys {
   position: fixed;
+  z-index: 9000;
   top: 10px;
   left: 10px;
   width: 60px;
   font-size: 8px;
   padding-top: 20px;
   text-transform: uppercase;
-  color: #fff;
+  color: #ccc;
   letter-spacing: 1px;
   text-align: center;
 }
@@ -2425,18 +2423,18 @@ span.nav-close:before {
   top: 0;
   width: 16px;
   height: 16px;
-  border: 1px solid #fff;
+  border: 1px solid #ccc;
   text-align: center;
   line-height: 14px;
   font-size: 12px;
 }
 .info-keys:before {
   left: 10px;
-  content: "\e603";
+  content: "\f060";
 }
 .info-keys:after {
   right: 10px;
-  content: "\e604";
+  content: "\f061";
 }
 /* Example media queries (reduce number of columns and change slideshow layout) */
 @media screen and (max-width: 60em) {
@@ -2476,6 +2474,11 @@ span.nav-close:before {
 @media screen and (max-width: 24em) {
   .grid li {
     width: 100%;
+  }
+}
+@media only screen and (max-device-width: 480px) {
+  #grid-gallery {
+    overflow-y: auto important;
   }
 }
 code,
@@ -7639,6 +7642,7 @@ body {
 }
 .jumbotron {
   margin-bottom: 0px;
+  hegiht: auto;
 }
 .light-grey {
   background-color: #f2f2f2;
@@ -7798,22 +7802,26 @@ body {
   padding: 10px;
 }
 #fbsection3 {
+  background-position: center center;
+  background-size: cover;
+  height: auto;
+  padding-top: 200px;
   background: url(images/grass.jpg) 50% 0 fixed;
 }
 #fbsection3 h2 {
-  text-align: center;
-  color: #FFF;
-  display: inline-block;
-  padding: 2% 2%;
-  font-size: 45px;
-  line-height: 65px;
-  text-transform: uppercase;
+  font-size: 36px;
   font-weight: 700;
-  width: auto;
+  margin: auto;
+  text-transform: uppercase;
+  text-align: center;
+  max-width: 800px;
 }
 #fbsection4 {
-  background-image: url(images/2.jpg);
-  margin-top: 0px;
+  background-position: center center;
+  background-size: cover;
+  height: auto;
+  padding-top: 200px;
+  background: url(images/3.jpg) 50% 0 fixed;
 }
 #fbsection4 p {
   font-size: 14px;
@@ -7826,6 +7834,7 @@ body {
   margin-top: 0px 0px;
   text-transform: uppercase;
   text-align: center;
+  color: #31c5c7;
 }
 #fbsection4 h3 {
   margin-left: 70px;
@@ -7852,23 +7861,77 @@ body {
   color: #fff;
   font-size: 20px;
 }
+.service .fa h3 {
+  margin-left: 70px;
+  text-transform: uppercase;
+  font-size: 30px;
+}
 #fbsection5 {
-  background-image: url(images/1.jpg);
+  background-position: center center;
+  background-size: cover;
+  height: auto;
+  padding-top: 200px;
+  background: url(http://digitalfirst.me/dfl/wp-content/uploads/2014/01/parallax6.png) fixed;
 }
-#map_canvas {
+#fbsection5 .container {
+  max-width: 300px;
+  text-align: center;
+}
+#fbsection5 h2 {
+  font-family: 'Dosis', sans-serif;
+  font-size: 46px;
+  font-weight: 700;
+  margin-top: 0px 0px;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+}
+#fbsection5 h3 {
+  margin-left: 50px;
+  text-transform: uppercase;
+  font-size: 25px;
+  color: #fff;
+  margin-top: 10px;
+}
+#fbsection5 h4 {
+  font-family: 'Dosis', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 0px 0px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #31c5c7;
+}
+#fbsection5 .contact {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 100%;
+  line-height: 40px;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  color: #31c5c7;
+}
+#fbsection5 .contact .fa {
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: inherit;
+  color: #31c5c7;
+  font-size: 30px;
+}
+#fbsection6 {
+  background-color: #31373a;
+  height: 200px;
+  color: #ccc;
+}
+#fbsection6 .line {
+  height: 40px;
   width: 100%;
-  height: 400px;
-}
-#box {
-  position: relative;
-  width: 100px;
-  height: 100px;
-  background-color: gray;
-  border: 5px solid black;
-  transition: border 500ms ease-out;
-  -webkit-transition: border 500ms ease-out;
-  -moz-transition: border 500ms ease-out;
-  -o-transition: border 500ms ease-out;
+  border-bottom: #cccccc solid 1px;
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
