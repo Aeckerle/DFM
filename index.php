@@ -276,7 +276,7 @@
 </div>
     
    </section>
-      <section id="fbsection5" data-speed="6" data-type="background">
+      <section id="fbsection5" data-speed="4" data-type="background">
             <div id='location-canvas' style='width:100%;height:300px;'></div>
             <div class="jumbotron white">
               <div class="container">
